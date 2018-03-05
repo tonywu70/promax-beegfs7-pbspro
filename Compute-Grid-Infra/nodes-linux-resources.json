@@ -26,7 +26,6 @@
       "metadata": {
         "description": "Number of VM instances (100 or less)."
       },
-      "defaultValue": 1,
       "maxValue": 40
     },
     "newStorageAccountSuffix": {
