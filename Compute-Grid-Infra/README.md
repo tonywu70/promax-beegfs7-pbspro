@@ -57,7 +57,7 @@ To build the compute grid, three main steps need to be executed :
 2. Optionally deploy the BeeGFS nodes
 3. Provision the compute nodes
 
-_The OS for this solution is CentOS 7.2. All scripts have been tested only for that version. SLES 12 can be used for a plain raw cluster, without Ganglia, PBS Pro and BeeGFS._
+_The OS for this solution is CentOS 7.4. All scripts have been tested only for that version. 
 
 > Starting on February 22, 2017 Master, Compute nodes and BeeGFS nodes are all provisioned using Managed Disks.
 
@@ -65,7 +65,7 @@ _The OS for this solution is CentOS 7.2. All scripts have been tested only for t
 ## Deploying using Azure CLI
 Azure CLI 2.0 setup instruction can be found [here](https://docs.microsoft.com/en-us/cli/azure/install-az-cli2)
 
-Below is an example on how to provision the templates. First you have to login with your credentials. If you have several subscriptions, make sure to make the one you want to deploy in the default. Then create a resource group providing the region and a name for it, and finally invoke the template passing your local parameter file. In the template URI make sure to use the RAW URI https://raw.githubusercontent.com/xpillons/azure-hpc/master/*** and not the github HTML link.
+Below is an example on how to provision the templates. First you have to login with your credentials. If you have several subscriptions, make sure to make the one you want to deploy in the default. Then create a resource group providing the region and a name for it, and finally invoke the template passing your local parameter file. In the template URI make sure to use the RAW URI https://raw.githubusercontent.com/tonywu70/promax-beegfs-pbspro/azure-hpc/master/*** and not the github HTML link.
 
     az login
     az account set --subscription [subscriptionId]
@@ -90,7 +90,7 @@ You have to provide these parameters to the template :
 * _adminPassword_ : Password to associate to the administrator account. It is highly encourage to use SSH authentication and passwordless instead.
 * _sshKeyData_ : The public SSH key to associate with the administrator user. Format has to be on a single line 'ssh-rsa key'
 
-[![Click to deploy template on Azure](http://azuredeploy.net/deploybutton.png "Click to deploy template on Azure")](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fxpillons%2Fazure-hpc%2Fmaster%2FCompute-Grid-Infra%2Fdeploy-master.json)  
+[![Click to deploy template on Azure](http://azuredeploy.net/deploybutton.png "Click to deploy template on Azure")](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Ftonywu70%2Fpromax-beegfs-pbspro%2Fmaster%2FCompute-Grid-Infra%2Fdeploy-master.json)  
 
 ### Check your deployment
 Once the deployment succeed, use the output **masterFQDN** to retrieve the master name and SSH on it. The output **GangliaURI** contains the URI of the Ganglia monitoring page, which should display after few minutes graphs of the current load.
@@ -111,7 +111,7 @@ Data disks are based on Premium Storage and can have three different sizes :
 
 The storage nodes will be included in the VNET created in the previous step, and all inside the *storage-subnet* .
 
-The template __BeeGFS/deploy-beegfs-vmss.json__ will provision the storage nodes with CentOS 7.2 and BeeGFS version 6.
+The template __BeeGFS/deploy-beegfs-vmss.json__ will provision the storage nodes with CentOS 7.4 and BeeGFS version 7.
 
 You have to provide these parameters to the template :
 * _nodeType_ : Default value is **both** and should be kept as is. Other values *meta* and *storage* are allowed for advanced scenarios in which meta data services and storage services are deployed on dedicated nodes.
@@ -127,7 +127,7 @@ You have to provide these parameters to the template :
 * _nbMetaDisks_ : Number of data disks to be attached to a single VM. Min is 2, Max is 8, Default is **2**.
 * _customDomain_ : If the VNET is configure to use a custom domain, specify the name of this custom domain to be used
 
-[![Click to deploy template on Azure](http://azuredeploy.net/deploybutton.png "Click to deploy template on Azure")](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fxpillons%2Fazure-hpc%2Fmaster%2FCompute-Grid-Infra%2FBeeGFS%2Fdeploy-beegfs-vmss.json)  
+[![Click to deploy template on Azure](http://azuredeploy.net/deploybutton.png "Click to deploy template on Azure")](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Ftonywu70%2Fpromax-beegfs-pbspro%2Fmaster%2FCompute-Grid-Infra%2FBeeGFS%2Fdeploy-beegfs-vmss.json)  
 
 ### Check your deployment
 Storage nodes will be named _beegfs000000 beegfs000001 ..._ .
@@ -162,7 +162,7 @@ You have to provide these parameters to the template :
 * _imageId_ : Specify the resource ID of the image to be used in the format **/subscriptions/{SubscriptionId}/resourceGroups/{ResourceGroup}/providers/Microsoft.Compute/images/{ImageName}** this value is only used when the _computeNodeImage_ is set to **CustomLinux** or **CustomWindows**
 
 
-[![Click to deploy template on Azure](http://azuredeploy.net/deploybutton.png "Click to deploy template on Azure")](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fxpillons%2Fazure-hpc%2Fmaster%2FCompute-Grid-Infra%2Fdeploy-nodes.json)  
+[![Click to deploy template on Azure](http://azuredeploy.net/deploybutton.png "Click to deploy template on Azure")](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Ftonywu70%2Fpromax-beegfs-pbspro%2Fmaster%2FCompute-Grid-Infra%2Fdeploy-nodes.json)  
 
 ### Check your deployment
 After few minutes, once the provision succeed, you should see the new hosts added on the Ganglia monitoring page if setup.
@@ -291,9 +291,7 @@ The **mpi-pingpong.o*** file should contains the MPI pingpong output as shown ab
 
 ____
 
-### Reporting bugs
 
-Please report bugs by opening an issue in the [GitHub Issue Tracker](https://github.com/xpillons/azure-hpc/issues)
 
 This project has adopted the [Microsoft Open Source Code of
 Conduct](https://opensource.microsoft.com/codeofconduct/). For more information
