@@ -154,7 +154,7 @@
         "description": "Name of vnet master node belongs as a string"
       }
     },
-     "conmputesubnet": {
+     "Conmputesubnet": {
       "type": "string",
       "metadata": {
         "description": "Name of compute subnet as a string"
@@ -181,7 +181,7 @@
       "VMsku": "[parameters('VMsku')]",
       "vnetRG": "[parameters('RGvnetName')]",
       "vnetName": "[parameters('vnetName')]",
-      "subnetName": "[parameters('computesubnet')]",
+      "subnetName": "[parameters('Computesubnet')]",
       "MasterName": "[parameters('masterName')]",
       "storageAccountType": "Standard_LRS",
       "sharedStorage": "[parameters('sharedStorage')]",
