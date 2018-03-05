@@ -65,6 +65,18 @@
         "description": "Name of master VM name"
       }
     },
+    "vnetName": {
+      "type": "string",
+      "metadata": {
+        "description": "Name of vnet"
+      }
+    },
+    "storagesubnet": {
+      "type": "string",
+      "metadata": {
+        "description": "Name of storagesubnet"
+      }
+    },
     "storageDiskSize": {
       "type": "string",
       "defaultValue": "P10",
@@ -127,13 +139,13 @@
         "size": 1023
       }
     },
-    "vmImage": "CentOS_7.2",
+    "vmImage": "CentOS_7.4",
     "deploymentApiVersion": "2015-11-01",
     "beeGFSNodeSettings": {
       "VMsku": "[parameters('VMsku')]",
       "vnetRG": "[parameters('RGvnetName')]",
-      "vnetName": "grid-vnet",
-      "subnetName": "storageSubnet",
+      "vnetName": "[parameters('vnetName')]",
+      "subnetName": "[parameters('storagesubnet')]",
       "MasterName": "[parameters('masterName')]",
       "avsetName": "beeGFSav",
       "storageDiskSize": "[variables('PremiumStorageMap')[parameters('storageDiskSize')].size]",
@@ -144,10 +156,10 @@
       "customDomain": "[parameters('customDomain')]"
     },
     "computeNodeImages": {
-      "CentOS_7.2": {
+      "CentOS_7.4": {
         "publisher": "OpenLogic",
         "offer": "CentOS",
-        "sku": "7.2",
+        "sku": "7.4",
         "version": "latest"
       },
       "RHEL_7.2": {
