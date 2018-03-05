@@ -89,6 +89,7 @@
         "CentOS_6.7",
         "CentOS_7.2",
         "CentOS_7.3",
+        "CentOS_7.4",
         "CentOS-HPC_7.1",
         "CentOS-HPC_7.3",
         "SLES12-HPC",
@@ -155,6 +156,18 @@
         "description": "Name of master VM name"
       }
     },
+     "vnetName": {
+      "type": "string",
+      "metadata": {
+        "description": "Name of vnet master node belongs as a string"
+      }
+    },
+     "conmputesubnet": {
+      "type": "string",
+      "metadata": {
+        "description": "Name of compute subnet as a string"
+      }
+    },
     "postInstallCommand": {
       "type": "string",
       "defaultValue": "hostname",
@@ -177,8 +190,8 @@
     "nodeSettings": {
       "VMsku": "[parameters('VMsku')]",
       "vnetRG": "[parameters('RGvnetName')]",
-      "vnetName": "grid-vnet",
-      "subnetName": "computeSubnet",
+      "vnetName": "[parameters('vnetName')]",
+      "subnetName": "[parameters('computesubnet')]",
       "MasterName": "[parameters('masterName')]",
       "storageAccountType": "Standard_LRS",
       "sharedStorage": "[parameters('sharedStorage')]",
@@ -198,6 +211,9 @@
       "CentOS_7.3": {
         "os": "linux"
       },
+      "CentOS_7.4": {
+        "os": "linux"
+      }
       "CentOS-HPC_7.1": {
         "os": "linux"
       },
@@ -252,6 +268,12 @@
         "version": "latest"
       },
       "CentOS_7.3": {
+        "publisher": "OpenLogic",
+        "offer": "CentOS",
+        "sku": "7.3",
+        "version": "latest"
+      },
+      "CentOS_7.4": {
         "publisher": "OpenLogic",
         "offer": "CentOS",
         "sku": "7.3",
