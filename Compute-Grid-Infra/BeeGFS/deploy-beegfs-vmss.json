@@ -165,7 +165,7 @@
       "sshKeyData": "[parameters('sshKeyData')]",
       "imageReference": "[variables('computeNodeImages')[variables('vmImage')]]"
     },
-    "computeApiVersion": "2016-04-30-preview",
+    "computeApiVersion": "2017-03-30",
     "vnetID": "[resourceId(variables('beeGFSNodeSettings').vnetRG, 'Microsoft.Network/virtualNetworks', variables('beeGFSNodeSettings').vnetName)]",
     "subnetRef": "[concat(variables('vnetID'),'/subnets/', variables('beeGFSNodeSettings').subnetName)]",
     "sshKeyPath": "[concat('/home/',variables('nodeOSSettings').adminUserName,'/.ssh/authorized_keys')]",
