@@ -26,7 +26,6 @@
       "metadata": {
         "description": "Number of VM instances (1000 or less)."
       },
-      "defaultValue": 1,
       "maxValue": 1000
     },
     "newStorageAccountSuffix": {
@@ -40,8 +39,7 @@
     },
     "postInstallCommand": {
       "type": "string",
-      "defaultValue": "",
-      "metadata": {
+            "metadata": {
         "description": "post install command to run as a post script install"
       }
     }
