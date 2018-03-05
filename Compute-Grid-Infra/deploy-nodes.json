@@ -181,7 +181,7 @@
       "VMsku": "[parameters('VMsku')]",
       "vnetRG": "[parameters('RGvnetName')]",
       "vnetName": "[parameters('vnetName')]",
-      "subnetName": "[parameters('Computesubnet')]",
+      "subnetName": "[parameters('Conmputesubnet')]",
       "MasterName": "[parameters('masterName')]",
       "storageAccountType": "Standard_LRS",
       "sharedStorage": "[parameters('sharedStorage')]",
