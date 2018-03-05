@@ -22,7 +22,6 @@
     },
     "masterImage": {
       "type": "string",
-      "defaultValue": "CentOS_7.4",
       "allowedValues": [
         "CentOS_6.7",
         "CentOS_7.2",
@@ -38,7 +37,6 @@
     },
     "sharedStorage": {
       "type": "string",
-      "defaultValue": "none",
       "allowedValues": [
         "none",
         "beegfs",
@@ -50,7 +48,6 @@
     },
     "dataDiskSize": {
       "type": "string",
-      "defaultValue": "none",
       "allowedValues": [
         "none",
         "P10",
@@ -66,12 +63,10 @@
       "metadata": {
         "description": "Number of data disks to attach to the master"
       },
-      "defaultValue": 2,
       "maxValue": 64
     },
     "monitoring": {
       "type": "string",
-      "defaultValue": "ganglia",
       "allowedValues": [
         "none",
         "ganglia"
@@ -82,7 +77,6 @@
     },
     "scheduler": {
       "type": "string",
-      "defaultValue": "none",
       "allowedValues": [
         "none",
         "pbspro"
@@ -106,7 +100,6 @@
     },
     "adminPassword": {
       "type": "securestring",
-      "defaultValue": "",
       "metadata": {
         "description": "password for the Virtual Machine."
       }
