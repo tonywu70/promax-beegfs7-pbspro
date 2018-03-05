@@ -4,7 +4,6 @@
   "parameters": {
     "nodeType": {
       "type": "string",
-      "defaultValue": "both",
       "allowedValues": [
         "both",
         "meta",
@@ -19,13 +18,11 @@
       "metadata": {
         "description": "Number of BeeGFS nodes (100 or less)."
       },
-      "defaultValue": 1,
       "maxValue": 100
     },
     "VMsku": {
       "type": "string",
-      "defaultValue": "Standard_DS3_v2",
-      "allowedValues": [
+        "allowedValues": [
         "Standard_DS1_v2",
         "Standard_DS2_v2",
         "Standard_DS3_v2",
@@ -79,7 +76,6 @@
     },
     "storageDiskSize": {
       "type": "string",
-      "defaultValue": "P10",
       "allowedValues": [
         "P10",
         "P20",
@@ -91,7 +87,6 @@
     },
     "nbStorageDisks": {
       "type": "int",
-      "defaultValue": 2,
       "minValue": 2,
       "maxValue": 16,
       "metadata": {
@@ -100,7 +95,6 @@
     },
     "metaDiskSize": {
       "type": "string",
-      "defaultValue": "P10",
       "allowedValues": [
         "P10",
         "P20",
@@ -112,7 +106,6 @@
     },
     "nbMetaDisks": {
       "type": "int",
-      "defaultValue": 2,
       "minValue": 2,
       "maxValue": 6,
       "metadata": {
@@ -121,7 +114,6 @@
     },
     "customDomain": {
       "type": "string",
-      "defaultValue": "",
       "metadata": {
         "description": "custom domain name to use for name resolution"
       }
@@ -273,7 +265,8 @@
               {
                 "name": "nic",
                 "properties": {
-                  "primary": "true",
+                  "primary": true,
+                  "enableAcceleratedNetworking": true,
                   "ipConfigurations": [
                     {
                       "name": "ipconfig",
