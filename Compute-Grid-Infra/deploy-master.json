@@ -261,23 +261,6 @@
   },
   "resources": [
     {
-      "name": "shared-resources",
-      "type": "Microsoft.Resources/deployments",
-      "apiVersion": "[variables('deploymentApiVersion')]",
-      "properties": {
-        "mode": "Incremental",
-        "templateLink": {
-          "uri": "[variables('sharedTemplateUrl')]",
-          "contentVersion": "1.0.0.0"
-        },
-        "parameters": {
-          "networkSettings": {
-            "value": "[variables('networkSettings')]"
-          }
-        }
-      }
-    },
-    {
       "name": "master-nsg",
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "[variables('deploymentApiVersion')]",
@@ -299,7 +282,6 @@
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "[variables('deploymentApiVersion')]",
       "dependsOn": [
-        "shared-resources",
         "master-nsg"
       ],
       "properties": {
