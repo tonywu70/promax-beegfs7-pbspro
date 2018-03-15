@@ -19,7 +19,8 @@
     "location": "[resourceGroup().location]",
     "networkApiVersion": "2016-03-30",
     "storageApiVersion": "2015-06-15",
-    "infraSubnetRef": "[resourceId('Microsoft.Network/virtualNetworks', parameters('networkSettings').virtualNetworkName,'/subnets/', parameters('networkSettings').infraSubnet)]"
+    "vnetID": "[resourceId(parameters('networkSettings').vnetRG, 'Microsoft.Network/virtualNetworks', parameters('networkSettings').virtialNetworkName)]",
+    "infraSubnetRef": "[concat(variables('vnetID'),'/subnets/', parameters('networkSettings').infraSubnet)]"
   },
   "resources": [
     {
