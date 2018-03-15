@@ -153,7 +153,7 @@
       "virtualNetworkName": "[variables('virtualNetworkName')]",
       "computeSubnet": "[parameters('computesubnet')]",
       "storageSubnet": "[parameters('storagesubnet')]",
-      "infraSubnet": "[concat(variables('vnetID'),'/subnets/', parameters('infrasubnet').subnetName)]",
+      "infraSubnet": "[parameters('infrasubnet')]",
       "gatewaySubnet": "[parameters('gatewaysubnet')]",
       "nsgName": "nsg-master"
     },
