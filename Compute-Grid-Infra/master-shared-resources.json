@@ -58,7 +58,7 @@
             "name": "[parameters('masterSettings').IPConfigName]",
             "properties": {
               "privateIPAllocationMethod": "Dynamic",
-              "enableAcceleratedNetworking": True,
+              "enableAcceleratedNetworking": true,
               "publicIPAddress": {
                 "id": "[resourceId('Microsoft.Network/publicIPAddresses',parameters('masterSettings').publicIPAddressName)]"
               },
