@@ -61,7 +61,7 @@
                 "id": "[resourceId('Microsoft.Network/publicIPAddresses',parameters('masterSettings').publicIPAddressName)]"
               },
               "subnet": {
-                "id": "[parameters('networkSettings').infrasubnetRef]"
+                "id": "[parameters('networkSettings').infraSubnetRef]"
               }
             }
           }
