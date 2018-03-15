@@ -135,6 +135,12 @@
         "description": "gateway subnet for gateway node node as a string."
       } 
     }, 
+    "RGname" : {
+      "type": "string",
+      "metadata": {
+        "descrtiption": "Resource group name as a string."
+      }
+    },
     "sshKeyData": {
       "type": "string",
       "metadata": {
@@ -155,6 +161,7 @@
       "storageSubnet": "[parameters('storagesubnet')]",
       "infraSubnet": "[parameters('infrasubnet')]",
       "gatewaySubnet": "[parameters('gatewaysubnet')]",
+      "vnetRG": "[parameters('RGname')]",
       "nsgName": "nsg-master"
     },
     "masterBoxName": "[concat(variables('longNamingInfix'), 'master')]",
