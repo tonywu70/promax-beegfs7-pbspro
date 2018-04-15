@@ -86,7 +86,7 @@
         "CentOS_7.3",
         "CentOS_7.4",
         "CentOS-HPC_7.1",
-        "CentOS-HPC_7.3",
+        "CentOS-HPC_6.8",
         "SLES12-HPC",
         "RHEL_7.2",
         "W2012R2",
@@ -207,7 +207,7 @@
       "CentOS-HPC_7.1": {
         "os": "linux"
       },
-      "CentOS-HPC_7.3": {
+      "CentOS-HPC_6.8": {
         "os": "linux"
       },
       "SLES12-HPC": {
@@ -245,10 +245,10 @@
         "sku": "7.1",
         "version": "latest"
       },
-      "CentOS-HPC_7.3": {
+      "CentOS-HPC_6.8": {
         "publisher": "OpenLogic",
         "offer": "CentOS-HPC",
-        "sku": "7.3",
+        "sku": "6.8",
         "version": "latest"
       },
       "CentOS_7.2": {
