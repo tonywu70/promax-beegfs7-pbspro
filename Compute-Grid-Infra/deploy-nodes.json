@@ -81,7 +81,7 @@
       "type": "string",
         "allowedValues": [
         "Ubuntu_16.04",
-        "CentOS_6.7",
+        "CentOS_6.9",
         "CentOS_7.2",
         "CentOS_7.3",
         "CentOS_7.4",
@@ -192,7 +192,7 @@
       "Ubuntu_16.04": {
         "os": "linux"
       },
-      "CentOS_6.7": {
+      "CentOS_6.9": {
         "os": "linux"
       },
       "CentOS_7.2": {
@@ -233,10 +233,10 @@
         "sku": "16.04-LTS",
         "version": "latest"
       },
-      "CentOS_6.7": {
+      "CentOS_6.9": {
         "publisher": "OpenLogic",
         "offer": "CentOS",
-        "sku": "6.7",
+        "sku": "6.9",
         "version": "latest"
       },
       "CentOS-HPC_7.1": {
