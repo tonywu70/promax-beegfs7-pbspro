@@ -14,7 +14,7 @@
         "Standard_DS12_v2",
         "Standard_DS13_v2",
         "Standard_DS14_v2",
-        "Standard_E64_v3",
+        "Standard_E32_v3",
         "Standard_DS15_v2"
       ],
       "metadata": {
@@ -24,7 +24,7 @@
     "masterImage": {
       "type": "string",
       "allowedValues": [
-        "CentOS_6.7",
+        "CentOS_6.9",
         "CentOS_7.2",
         "CentOS_7.3",
         "CentOS_7.4",
@@ -187,7 +187,7 @@
     },
 
     "osTypes": {
-      "CentOS_6.7": {
+      "CentOS_6.9": {
         "os": "linux"
       },
       "CentOS_7.2": {
@@ -210,10 +210,10 @@
       }
     },
     "computeImages": {
-      "CentOS_6.7": {
+      "CentOS_6.9": {
         "publisher": "OpenLogic",
         "offer": "CentOS",
-        "sku": "6.7",
+        "sku": "6.9",
         "version": "latest"
       },
       "CentOS_7.2": {
