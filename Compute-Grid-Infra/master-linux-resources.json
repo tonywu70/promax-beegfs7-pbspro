@@ -159,7 +159,7 @@
       }
     },
     "masterScriptTemplateURI": "[uri(deployment().properties.templateLink.uri, 'master-linux-script.json')]",
-    "computeApiVersion": "2016-04-30-preview",
+    "computeApiVersion": "2017-03-30",
     "deploymentApiVersion": "2016-09-01"
   },
   "resources": [
