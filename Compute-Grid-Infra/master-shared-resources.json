@@ -53,12 +53,13 @@
         "[concat('Microsoft.Network/publicIPAddresses/', parameters('masterSettings').publicIPAddressName)]"
       ],
       "properties": {
+        "primary": true,
+        "enableAcceleratedNetworking": true,
         "ipConfigurations": [
           {
             "name": "[parameters('masterSettings').IPConfigName]",
             "properties": {
               "privateIPAllocationMethod": "Dynamic",
-              "enableAcceleratedNetworking": true,
               "publicIPAddress": {
                 "id": "[resourceId('Microsoft.Network/publicIPAddresses',parameters('masterSettings').publicIPAddressName)]"
               },
