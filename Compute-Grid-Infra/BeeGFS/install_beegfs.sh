@@ -206,7 +206,7 @@ install_beegfs_repo()
     wget -O beegfs-rhel7.repo http://www.beegfs.com/release/beegfs_6/dists/beegfs-rhel7.repo
     
 #wget -O beegfs-rhel6.repo https://www.beegfs.io/release/beegfs_7/dists/beegfs-rhel6.repo
-     mv beegfs-rhel67.repo /etc/yum.repos.d/beegfs.repo
+     mv beegfs-rhel7.repo /etc/yum.repos.d/beegfs.repo
 	#wget -O /etc/yum.repos.d/beegfs-rhel7.repo https://www.beegfs.io/release/latest-stable/dists/beegfs-rhel7.repo
 
     #rpm --import http://www.beegfs.com/release/beegfs_2015.03/gpg/RPM-GPG-KEY-beegfs
