@@ -54,7 +54,6 @@
       ],
       "properties": {
         "primary": true,
-        "enableAcceleratedNetworking": true,
         "ipConfigurations": [
           {
             "name": "[parameters('masterSettings').IPConfigName]",
