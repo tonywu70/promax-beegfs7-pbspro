@@ -25,7 +25,7 @@
       "type": "string",
       "allowedValues": [
         "CentOS_6.9",
-        "CentOS_7.2",
+        "CentOS_7.1",
         "CentOS_7.3",
         "CentOS_7.4",
         "CentOS-HPC_7.1",
@@ -191,7 +191,7 @@
       "CentOS_6.9": {
         "os": "linux"
       },
-      "CentOS_7.2": {
+      "CentOS_7.1": {
         "os": "linux"
       },
       "CentOS_7.3": {
@@ -220,10 +220,10 @@
         "sku": "6.9",
         "version": "latest"
       },
-      "CentOS_7.2": {
+      "CentOS_7.1": {
         "publisher": "OpenLogic",
         "offer": "CentOS",
-        "sku": "7.2",
+        "sku": "7.1",
         "version": "latest"
       },
       "CentOS_7.3": {
